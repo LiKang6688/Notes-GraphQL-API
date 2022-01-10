@@ -3,7 +3,7 @@ import http from "http";
 import { ApolloServer } from "apollo-server-express";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
 import jwt from "jsonwebtoken";
-import helmet from "helmet";
+// import helmet from "helmet";
 import cors from "cors";
 import db from "./db.js";
 import typeDefs from "./schema.js";
@@ -20,10 +20,9 @@ const DB_HOST = process.env.DB_HOST || "mongodb://localhost:27017/notedly";
 // Required logic for integrating with Express
 const app = express();
 // a collection of small security-minded middleware functions
-app.use(helmet());
+// app.use(helmet());
 // To enable Cross-Origin Resource Sharing
 app.use(cors());
-
 const httpServer = http.createServer(app);
 
 // Connect to the database
